@@ -1,8 +1,8 @@
-contents="lichenmoss_contents"	# 記事リポジトリの名前
-contents_owner="hirominakaji"	# 記事リポジトリの持ち主のユーザ名
-wwwdir="/var/www"		# 記事リポジトリやlichenmossを置くディレクトリ
-contentsdir="$wwwdir/$contents" # 記事リポジトリのパス
-appdir="$wwwdir/lichenmoss"	# lichenmossをインストールするパス
+contents="lichenmoss_contents"
+contents_owner="hirominakaji"
+wwwdir="/var/www"
+contentsdir="$wwwdir/$contents"
+appdir="$wwwdir/lichenmoss"
 viewdir="$appdir/view"
 logdir="/var/log/$contents"
 datadir="${contentsdir}_data"
