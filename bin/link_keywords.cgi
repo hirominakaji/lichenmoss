@@ -6,7 +6,7 @@ echo -e 'Content-Type: text/html\n'
 sed 's/%2C/\n/g' <<< ${QUERY_STRING}                       | 
 nkf --url-input                                            | 
 sed -e '1s/keywords=//' -e 's/^[   ]*//' -e 's/[   ]*$//'  | 
-nkf -w16b0                                                 | 
+nkf -w16B0                                                 | 
 xxd -plain                                                 | 
 td -d '\n'                                                 | 
 sed 's/..../\&#x&;/g'                                      |
