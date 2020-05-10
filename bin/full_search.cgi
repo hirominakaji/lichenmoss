@@ -15,7 +15,7 @@ Content-Type: text/html
 FIN
 
 [ -n "$word" ] &&
-tac "datadir/all_markdown"              | 
+tac "$datadir/all_markdown"             | 
 grep " .*$word"                         | 
 awk '{print $1}'                        | 
 uniq                                    |
