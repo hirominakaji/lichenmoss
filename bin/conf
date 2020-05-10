@@ -1,4 +1,4 @@
-contents="lichenmoss_contents"
+contents="dummy_contents"
 contents_owner="hirominakaji"
 wwwdir="/var/www"
 contentsdir="$wwwdir/$contents"
