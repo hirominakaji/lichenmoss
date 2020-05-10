@@ -7,7 +7,7 @@ word=$(nkf --url-input <<< ${QUERY_STRING} | sed 's/^key=//')
 tac "$datadir/keyword_list"     | 
 grep -F ",$word,"               | 
 awk '{print $1}'                | 
-xargs -I@ cat "datadir/@/link"  |
+xargs -I@ cat "$datadir/@/link"  |
 sed 's/^/* /'                   | 
 sed "1i# Keyword: $word"        |
 pandoc --template="$viewdir/template.html"
