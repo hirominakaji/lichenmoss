@@ -1,0 +1,20 @@
+#!/bin/bash -exv
+tmp=/tmp/$$
+set -o pipefail
+trap 'rm -f $tmp-*' EXIT
+
+#
+tr -dc '[:print:]\n' | 
+tee $tmp-records     | 
+#
+sed 's;\].*;;'       | 
+sed 's;.*\[;;'       | 
+tr '/' ' '           | 
+sed 's/:/ /'         | 
+date -f - "+%Y%m%d %H%M%S" > $tmp-date
+
+#
+[ "$(wc -l < $tmp-date)" = "$(wc -l < $tmp-records)" ]
+
+#
+paste -d ' ' $tmp-date $tmp-records
